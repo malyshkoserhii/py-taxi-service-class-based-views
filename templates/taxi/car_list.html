@@ -13,18 +13,18 @@
       </tr>
       </thead>
       <tbody>
-        {% for car in car_list %}
-        	<tr>
-          <th scope="row">{{ car.id }}</th>
-          <td>
+      {% for car in car_list %}
+        <tr>
+          <th scope="row">
             <a href="{% url 'taxi:car-detail' car.id %}">
-              {{ car.model }}
+              {{ car.id }}
             </a>
-          </td>
+          </th>
+          <td>{{ car.model }}</td>
           <td>{{ car.manufacturer.name }}</td>
           <td>{{ car.manufacturer.country }}</td>
         </tr>
-        {% endfor %}
+      {% endfor %}
       </tbody>
     </table>
   {% else %}

@@ -15,11 +15,13 @@
       <tbody>
       {% for driver in driver_list %}
         <tr>
-          <th scope="row">{{ driver.id }}</th>
-          <td>
+          <th scope="row">
             <a href="{% url 'taxi:driver-detail' driver.id %}">
-              {{ driver.username }}
+              {{ driver.id }}
             </a>
+          </th>
+          <td>
+            {{ driver.username }}
           </td>
           <td>{{ driver.first_name }} {{ driver.last_name }}</td>
           <td>{{ driver.license_number }}</td>
